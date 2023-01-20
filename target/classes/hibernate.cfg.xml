@@ -38,6 +38,8 @@
 
         <property name="format_sql">true</property>
 
+<!--        <mapping class="com.hb01.ontoone.Student03"></mapping>-->
+<!--        <mapping class="com.hb01.ontoone.Diary"></mapping>-->
 
 
     </session-factory>
