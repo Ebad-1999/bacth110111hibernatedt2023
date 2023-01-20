@@ -1,25 +1,23 @@
 package hb08.manytomany;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name ="t_book08")
 public class Book08 {
+
     @Id
     private int id;
 
+    @Column(name = "book_name")
     private String name;
 
+
     @ManyToMany(mappedBy = "bookList")
-    private List<Student08> students = new ArrayList<>();
+    private List<Student08> students=  new ArrayList<>();
 
-    //Getter - Setter
-
+    // getter and setter
 
     public int getId() {
         return id;
@@ -45,8 +43,7 @@ public class Book08 {
         this.students = students;
     }
 
-    //toString()
-
+    // toString Method
 
     @Override
     public String toString() {

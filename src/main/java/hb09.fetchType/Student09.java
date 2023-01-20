@@ -1,19 +1,10 @@
-package fetchtypes;
+package hb09.fetchType;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
-@Entity
-@Table(name="t_student09")
-public class Student09 {
-    @Id
-    private int id;
-    @Column(name="std_name", nullable = false)
-    private String name;
-    private int grade;
-
-    /*
+  /*
             1. If next side is Many,  then the default fetch type is Lazy
                 a.OneToMany
                 b.ManyToMany
@@ -23,11 +14,21 @@ public class Student09 {
                 b. OneToOne
      */
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Book09> bookList = new ArrayList<>();
 
-    //getter- setter
+@Entity
+public class Student09 {
+    @Id
+    private int id;
 
+    @Column
+    private String name;
+
+    @Column
+    private int grade;
+
+    @OneToMany(mappedBy = "student" ,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+
+    private List<Book09> bookLis = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -53,15 +54,13 @@ public class Student09 {
         this.grade = grade;
     }
 
-    public List<Book09> getBookList() {
-        return bookList;
+    public List<Book09> getBookLis() {
+        return bookLis;
     }
 
-    public void setBookList(List<Book09> bookList) {
-        this.bookList = bookList;
+    public void setBookLis(List<Book09> bookLis) {
+        this.bookLis = bookLis;
     }
-
-    //toString
 
     @Override
     public String toString() {
@@ -69,7 +68,7 @@ public class Student09 {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", grade=" + grade +
-                ", bookList=" + bookList +
+                ", bookLis=" + bookLis +
                 '}';
     }
 }

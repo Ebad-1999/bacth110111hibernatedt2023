@@ -5,24 +5,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "t_student08")
 public class Student08 {
+
     @Id
     private int id;
-    @Column(name="std_name", nullable = false)
+
+    @Column(name = "student_name",nullable = false)
     private String name;
+
+    @Column(length = 100)
     private int grade;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "student08_book08", //name for the join table
-            joinColumns = {@JoinColumn(name="std_id")},  //name of column for owner of reln
-            inverseJoinColumns = {@JoinColumn(name="book_id")} // name of column where id of other table will be stored
 
-    )
-    private List<Book08> bookList = new ArrayList<>();
+    // setup relationship
 
+    @ManyToMany
+    @JoinTable(name = "Student08_Book08"
+    ,joinColumns = {@JoinColumn(name = "std_id")}, // name for the join table
+    inverseJoinColumns ={@JoinColumn(name = "book_id")} )// name of column from parent or superclass
+    private List<Book08> bookList = new ArrayList<>();// name of column where id of other table
 
-    //Getter - Setter
+    // getter and setter
 
 
     public int getId() {
@@ -57,7 +60,7 @@ public class Student08 {
         this.bookList = bookList;
     }
 
-    //toString
+    // toString Method
 
 
     @Override

@@ -1,21 +1,22 @@
-package fetchtypes;
+package hb09.fetchType;
 
 import javax.persistence.*;
 
+
 @Entity
-@Table
 public class Book09 {
+
     @Id
+
+
     private int id;
-
+    @Column
     private String name;
-
 
     @ManyToOne
     @JoinColumn
     private Student09 student;
 
-    //getter-setter
 
     public int getId() {
         return id;
@@ -41,13 +42,12 @@ public class Book09 {
         this.student = student;
     }
 
-    //toString()
-
     @Override
     public String toString() {
         return "Book09{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", student=" + student +
                 '}';
     }
 }
