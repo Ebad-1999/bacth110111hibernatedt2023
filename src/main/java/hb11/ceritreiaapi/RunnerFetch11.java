@@ -1,6 +1,6 @@
 package hb11.ceritreiaapi;
 
-import com.hb10idgenration.Student10;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

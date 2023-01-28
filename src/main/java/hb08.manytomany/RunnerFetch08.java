@@ -1,7 +1,6 @@
 package hb08.manytomany;
 
-import com.hb07.bi_onetomany.Book07;
-import com.hb07.bi_onetomany.Student07;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

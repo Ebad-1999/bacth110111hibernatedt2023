@@ -101,8 +101,6 @@ public class RunnerFetch07 {
 
 
 
-        tx.commit();
-        session.close();
-        sf.close();
+
     }
 }

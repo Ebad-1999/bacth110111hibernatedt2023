@@ -1,7 +1,6 @@
 package hb09.fetchType;
 
-import com.hb08.manytomany.Book08;
-import com.hb08.manytomany.Student08;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
